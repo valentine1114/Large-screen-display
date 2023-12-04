@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大屏展示作业</title>
+  <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+
+  <script>
+    var t = null;
+    t = setTimeout(time, 1000); //開始运行
+    function time() {
+      clearTimeout(t); //清除定时器
+      dt = new Date();
+      var y = dt.getFullYear();
+      var mt = dt.getMonth() + 1 >= 10 ? dt.getMonth() + 1 : '0' + (dt.getMonth() + 1);
+      var day = dt.getDate() >= 10 ? dt.getDate() : '0' + dt.getDate();
+      var h = dt.getHours() >= 10 ? dt.getHours() : '0' + dt.getHours(); //获取时
+      var m = dt.getMinutes() >= 10 ? dt.getMinutes() : '0' + dt.getMinutes();; //获取分
+      var s = dt.getSeconds() >= 10 ? dt.getSeconds() : '0' + dt.getSeconds();; //获取秒
+      document.querySelector(".show-time").innerHTML =
+
+        y +
+        "/" +
+        mt +
+        "/" +
+        day +
+        " " +
+        h +
+        ":" +
+        m +
+        ":" +
+        s;
+      t = setTimeout(time, 1000); //设定定时器，循环运行
+    }
+  </script>
+  <!-- </header> -->
+  <section class="main-box">
+
+    <div class="column">
+
+      <div class="panel bar">
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+
+      <div class="panel line">
+        <h2 style="color: #FFD56F; font-weight: bolder; text-align:right;font-size: 24px;">Energy Consumption</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+
+      <div class="panel pie">
+        <!-- <h2>饼形图-年龄分布</h2> -->
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="no">
+        <div class="no-hd">
+          <ul>
+            <li>
+              <div class="hd1"></div>
+            </li>
+            <li>
+              <div class="hd2"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="no-bd">
+          <ul>
+            <li style="color: #FFF; font-weight: bolder;font-size:large"> Step Count Today</li>
+            <li style=" color: #FFF; font-weight: bolder;font-size:large"> Calorie Consumption</li>
+          </ul>
+        </div>
+      </div>
+      <div class="head">
+        <h1>HEALTH REPORT </h1>
+        <div class="show-time"></div>
+      </div>
+      <div class="no">
+        <div class="no-hd">
+          <div class="map1"></div>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+
+    <div class="column">
+      <div class="panel bar-second">
+
+        <div class="chart"></div>
+        <div class="panel-footer">
+        </div>
+      </div>
+      <div class="panel line-second">
+
+
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel pie-second">
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+
+  </section>
+</body>
+
+<script src="./js/flexible.js"></script>
+<script src="./js/echarts.min.js"></script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
